@@ -1,0 +1,75 @@
+<ion-menu *ngIf="login" menuId="miMenu" side="start" type="overlay" contentId="main" class="menu-transparent">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Menú</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+  <ion-content>
+
+      <!-- <ion-item>
+        <ion-card [routerLink]="['/principal']" routerDirection="forward"     [ngClass]="{'selected': selected === 'option1'}" (click)="selectOption('option1')" class="centerCard">
+          <ion-card-content  class="centercar">
+            <fa-icon icon="house"></fa-icon>
+            <ion-label>Inicio</ion-label>
+          </ion-card-content>
+        </ion-card>
+      </ion-item> -->
+
+      <ion-item class="mt">
+        <ion-card [routerLink]="['/perfil']" routerDirection="forward"         [ngClass]="{'selected': selected === 'option2'}" (click)="selectOption('option2')" class="centerCard">
+          <ion-card-content class="centercar">
+            <fa-icon icon="user"></fa-icon>
+            <ion-label>Perfil</ion-label>
+          </ion-card-content>
+        </ion-card>
+      </ion-item>
+
+      <ion-item>
+        <ion-card [routerLink]="['/navegacion']" routerDirection="forward"     [ngClass]="{'selected': selected === 'option3'}" (click)="selectOption('option3')" class="centerCard">
+          <ion-card-content class="centercar">
+            <fa-icon icon="notes-medical"></fa-icon>
+            <ion-label>Citas</ion-label>
+          </ion-card-content>
+        </ion-card>
+      </ion-item>
+
+      <ion-item>
+        <ion-card [routerLink]="['/justificantes']" routerDirection="forward"    [ngClass]="{'selected': selected === 'option4'}" (click)="selectOption('option4')" class="centerCard">
+          <ion-card-content class="centercar">
+            <fa-icon icon="file-medical"></fa-icon>
+            <ion-label>Justificantes</ion-label>
+          </ion-card-content>
+        </ion-card>
+      </ion-item>
+
+      <ion-item *ngIf="rol === 'Doctor'">
+        <ion-card [routerLink]="['/pacientes']" routerDirection="forward"   [ngClass]="{'selected': selected === 'option5'}" (click)="selectOption('option5')" class="centerCard">
+          <ion-card-content class="centercar">
+            <fa-icon icon="users"></fa-icon>
+            <ion-label>Pacientes</ion-label>
+          </ion-card-content>
+        </ion-card>
+      </ion-item>
+
+      <ion-item *ngIf="rol === 'Doctor'">
+        <ion-card [routerLink]="['/agregar-doc']" routerDirection="forward"  [ngClass]="{'selected': selected === 'option6'}" (click)="selectOption('option6')" class="centerCard">
+          <ion-card-content class="centercar">
+            <fa-icon icon="user-doctor"></fa-icon>
+            <ion-label>Agregar Doctor</ion-label>
+          </ion-card-content>
+        </ion-card>
+      </ion-item>
+
+      <ion-item (click)="logout()" routerDirection="forward">
+        <ion-card [ngClass]="{'selected': selected === 'option7'}" (click)="selectOption('option7')" class="centerCard">
+          <ion-card-content class="centercar">
+            <fa-icon icon="right-from-bracket"></fa-icon>
+            <ion-label>Cerrar Sesión</ion-label>
+          </ion-card-content>
+        </ion-card>
+      </ion-item>
+
+  </ion-content>
+  <div><img class="center" src="assets/Logo_IDocTics.png" alt="Keysoft"></div>
+</ion-menu>

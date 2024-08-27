@@ -1,0 +1,134 @@
+<ion-content>
+  <ion-card class="my-card">
+    <ion-card-content>
+      <div class="ion-text-center icon-text-container">
+        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <h1>Justificantes</h1>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <div *ngIf="rol === 'Doctor'">
+
+    <ion-grid>
+      <ion-col>
+        <ion-button class="custom-button" (click)="crearJust()">
+          <fa-icon icon="square-plus" slot="end"></fa-icon>
+          <ion-label>Crear justificante</ion-label>
+        </ion-button>
+      </ion-col>
+    </ion-grid>
+
+    <ion-grid fixed="">
+      <div>
+        <ion-searchbar  style="text-transform: uppercase;" placeholder="Buscar matricula" debounce="500" searchIcon="search-outline" (ionChange)="buscar($event)"></ion-searchbar>
+        <div class="table-container">
+          <table>
+            <tbody *ngFor="let c of certificados">
+              <tr *ngIf="resp === c.matricula" class="tr-second">
+                <td>{{c.nombre_paciente}}</td>
+                <td>
+
+                  <ion-button fill="clear" color="warning" size="small"  (click)="verDetalles(c)">
+                    <fa-icon icon="eye"></fa-icon>
+                  </ion-button>
+
+                  <ion-button fill="clear" color="dark" size="small" (click)="createPdf(c)">
+                    <fa-icon icon="download"></fa-icon>
+                  </ion-button>
+
+                </td>
+                <td>
+
+                  <ion-button fill="clear" color="warning" size="small" (click)="editar(c)">
+                    <fa-icon icon="pen-to-square"></fa-icon>
+                  </ion-button>
+                  <ion-button fill="clear" color="danger" size="small" (click)="eliminar(c.id)">
+                    <fa-icon icon="trash"></fa-icon>
+                  </ion-button>
+
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Documento</th>
+              <th>Detalles</th>
+            </tr>
+          </thead>
+          <tbody *ngFor="let c of certificados">
+            <tr class="tr-second">
+              <td>{{c.nombre_paciente}}</td>
+              <td>
+
+                <ion-button fill="clear" color="warning" size="small"  (click)="verDetalles(c)">
+                  <fa-icon icon="eye"></fa-icon>
+                </ion-button>
+
+                <ion-button fill="clear" color="dark" size="small" (click)="createPdf(c)">
+                  <fa-icon icon="download"></fa-icon>
+                </ion-button>
+
+              </td>
+              <td>
+
+                <ion-button fill="clear" color="warning" size="small" (click)="editar(c)">
+                  <fa-icon icon="pen-to-square"></fa-icon>
+                </ion-button>
+                <ion-button fill="clear" color="danger" size="small" (click)="eliminar(c.id)">
+                  <fa-icon icon="trash"></fa-icon>
+                </ion-button>
+
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+  </ion-grid>
+  </div>
+
+  <div *ngIf="rol === 'Paciente'">
+    <ion-grid fixed="">
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Documento</th>
+            </tr>
+          </thead>
+          <tbody *ngFor="let c of certificados">
+            <tr *ngIf="matricula === c.matricula" class="tr-second">
+              <td>{{c.nombre_paciente}}</td>
+              <td>
+
+                <ion-button fill="clear" color="warning" size="small"  (click)="verDetalles(c)">
+                  <fa-icon icon="eye"></fa-icon>
+                </ion-button>
+
+                <ion-button fill="clear" color="dark" size="small" (click)="createPdf(c)">
+                  <fa-icon icon="download"></fa-icon>
+                </ion-button>
+
+              </td>
+
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </ion-grid>
+  </div>
+
+</ion-content>

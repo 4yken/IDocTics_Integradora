@@ -1,0 +1,118 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500);
+
+ion-content {
+  --background: #121112; /* Aquí puedes cambiar el color a tu gusto */
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 90px;
+}
+
+/* ion-card {
+  box-shadow: 0 0 10px #4aea9c;
+} */
+
+ion-card-header{
+  --background: #46ec9a;
+}
+
+ion-card-content{
+  --background: #303133;
+}
+
+.body{
+    font: 62.5% Open Sans, Freesans, sans-serif;
+    background: #303133;
+}
+
+
+.login-wrapper{
+    margin:80px auto;
+    width:325px;
+}
+
+ion-row h1{
+    color:#dedede;
+    font-size:2.8em;
+    font-weight: 500;
+    letter-spacing: -1px;
+    font-family: Roboto;
+}
+
+ion-row input{
+    border:none;
+    margin:0;
+}
+
+ion-row .input-row{
+    margin:2em 0;
+    overflow:hidden;
+}
+
+ion-row .icon{
+    font-size:1.4em;
+    background:#3b3b3b;
+    padding:0.8em;
+    border-left:4px solid #41ee97;
+    color:#e4e9ed;
+    float:left;
+}
+
+ion-row input[type="email"],ion-row input[type="password"] {
+    padding:0.8em 0.8em 0.8em 0;
+    font-size:1.4em;
+    color:#c2c2c2;
+    width:275px;
+}
+
+ion-row input[type="email"]:focus,ion-row input[type="password"]:focus {
+    outline:0;
+}
+
+ion-row input[type="submit"]{
+    border:none;
+    background:#41ee97;
+    color:#121112;
+    font-size:1.6em;
+    padding:0.7em 1.2em;
+    opacity: 1;
+    transition: opacity .5s ease-in-out;
+    -moz-transition: opacity .5s ease-in-out;
+    -webkit-transition: opacity .5s ease-in-out;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+}
+
+ion-row input[type="submit"]:hover {
+    background:#3eb16e;
+    opacity: 0.8;
+}
+
+ion-row .reset{
+    margin-left:1em;
+    color:#FFFFFF;
+    font-size: 1.4em;
+}
+
+ion-row .reset a{
+    color:#FFFFFF;
+}
+
+ion-row .reset a:hover{
+    text-decoration: none;
+}
+
+.custom-modal {
+  --background: #F5F5F5;
+  --color: #333;
+  --border-radius: 10px;
+  --border-color: #999;
+  --box-shadow: none;
+  --ion-color-primary: #007bff;
+}
+

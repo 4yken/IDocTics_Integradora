@@ -1,0 +1,129 @@
+<ion-content>
+
+  <ion-card class="my-card">
+    <ion-card-content>
+      <div class="ion-text-center icon-text-container">
+        <h1>Detalles Cita</h1>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-content class="ion-padding">
+
+    <ion-card class=" my-cardd">
+      <ion-card-header>
+          <ion-card-title>Datos Del Doctor</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-grid fixed>
+          <ion-row>
+            <ion-col size="2">
+              <fa-icon icon="user-doctor"></fa-icon>
+            </ion-col>
+            <ion-col>
+              <ion-card-subtitle class="large">{{cita.nombre_doctor}}</ion-card-subtitle>
+              <ion-card-subtitle class="small">Nombre</ion-card-subtitle>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card class="my-cardd">
+
+      <ion-card-header>
+        <ion-card-title>Datos Del Paciente</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-grid>
+
+          <ion-row>
+            <ion-col size="2">
+              <fa-icon icon="user"></fa-icon>
+            </ion-col>
+            <ion-col>
+              <ion-card-subtitle class="large">{{cita.nombre_paciente}} {{cita.apellidos_paciente}}</ion-card-subtitle>
+              <ion-card-subtitle class="small">Nombre</ion-card-subtitle>
+            </ion-col>
+          </ion-row>
+
+
+          <ion-row>
+            <ion-col size="2">
+              <fa-icon icon="id-badge"></fa-icon>
+            </ion-col>
+            <ion-col>
+              <ion-card-subtitle class="large">{{cita.matricula}}</ion-card-subtitle>
+              <ion-card-subtitle class="small">Matricula</ion-card-subtitle>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col size="2">
+              <fa-icon icon="circle-info"></fa-icon>
+            </ion-col>
+            <ion-col>
+              <ion-card-subtitle class="large">{{cita.detalles}}</ion-card-subtitle>
+              <ion-card-subtitle class="small">Detalles</ion-card-subtitle>
+            </ion-col>
+          </ion-row>
+
+
+          <ion-row>
+            <ion-col size="2">
+              <fa-icon icon="disease"></fa-icon>
+            </ion-col>
+            <ion-col>
+              <ion-card-subtitle class="large">{{cita.enfermedad}}</ion-card-subtitle>
+              <ion-card-subtitle class="small">Enfermedad</ion-card-subtitle>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col size="2">
+              <fa-icon icon="pills"></fa-icon>
+            </ion-col>
+            <ion-col>
+              <ion-card-subtitle class="large">{{cita.medicamentos}}</ion-card-subtitle>
+              <ion-card-subtitle class="small">Medicamentos</ion-card-subtitle>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col size="2">
+              <fa-icon icon="clock"></fa-icon>
+            </ion-col>
+            <ion-col>
+              <ion-card-subtitle class="large">{{cita.hora}}</ion-card-subtitle>
+              <ion-card-subtitle class="small">Hora</ion-card-subtitle>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col size="2">
+              <fa-icon icon="calendar-days"></fa-icon>
+            </ion-col>
+            <ion-col>
+              <ion-card-subtitle class="large">{{cita.fecha}}</ion-card-subtitle>
+              <ion-card-subtitle class="small">Fecha</ion-card-subtitle>
+            </ion-col>
+          </ion-row>
+
+
+          <ion-grid>
+            <ion-col>
+              <ion-button class="custom-button" (click)="cerrar()">
+                <fa-icon class="icon" icon="circle-xmark" slot="end"></fa-icon>
+                <ion-label>Cerrar</ion-label>
+              </ion-button>
+            </ion-col>
+          </ion-grid>
+
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+  </ion-content>
+
+</ion-content>

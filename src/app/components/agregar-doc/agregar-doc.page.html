@@ -1,0 +1,77 @@
+<ion-content>
+  <ion-card class="my-card">
+    <ion-card-content>
+      <div class="ion-text-center icon-text-container">
+        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <h1>Registrar Doctor</h1>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-content>
+    <ion-grid *ngIf="rol === 'Doctor'" fixed="">
+
+      <div class="container">
+        <ion-card  [formGroup]="form" (ngSubmit)="registrar()">
+          <form [formGroup]="form" (ngSubmit)="registrar()">
+            <ion-card-content class="body">
+              <ion-grid>
+                <ion-row class="login-wrapper">
+                  <h1>Datos del Doctor</h1>
+                  <div>
+                    <h3>Rellenar todos los campos*</h3>
+                  </div>
+                  <div class="input-row">
+                    <span class="icon"><ion-icon name="at-outline"></ion-icon></span>
+                    <input type="email" formControlName="correo"  placeholder="Email" required/>
+                  </div>
+
+                  <div class="input-row">
+                    <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                    <input type="password" formControlName="password" placeholder="Contraseña (Mínimo 6 caracteres)" required/>
+                  </div>
+
+                  <div class="input-row">
+                    <span class="icon"><ion-icon name="text-outline"></ion-icon></span>
+                    <input type="text" formControlName="nombres" placeholder="Nombre(s)" required/>
+                  </div>
+
+                  <div class="input-row">
+                    <span class="icon"><ion-icon name="text-outline"></ion-icon></span>
+                    <input type="text" formControlName="apellidos" placeholder="Apellido(s)" required/>
+                  </div>
+
+                  <div class="input-row">
+                    <span class="icon"><ion-icon name="call-outline"></ion-icon></span>
+                    <input min="0"  maxlength="10" minlength="10" type="number" formControlName="telefono" placeholder="Telefono" required/>
+                  </div>
+
+                  <div class="input-row">
+                    <span class="icon"><fa-icon icon="address-card"></fa-icon></span>
+                    <input min="0" maxlength="8" minlength="7" type="number" formControlName="cedula" placeholder="Cedula" required/>
+                  </div>
+
+                  <div class="submit-row">
+                    <input type="submit" value="Registrar" />
+                    <span class="reset">O   <a [routerLink]="['/principal']" routerLinkActive="router-link-active"> Cancelar</a></span>
+                  </div>
+                </ion-row>
+              </ion-grid>
+            </ion-card-content>
+          </form>
+        </ion-card>
+      </div>
+
+    </ion-grid>
+
+    <ion-grid *ngIf="rol === 'Paciente'">
+      <ion-card>
+        <ion-card-content>
+          <h1>Ups! No se como llegamos aqui X.X</h1>
+        </ion-card-content>
+      </ion-card>
+    </ion-grid>
+  </ion-content>
+</ion-content>

@@ -1,0 +1,77 @@
+<ion-content>
+
+  <ion-card class="my-card">
+    <ion-card-content>
+      <div class="ion-text-center icon-text-container">
+        <h1>Crear Justificante</h1>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+          <div class="container">
+            <ion-card>
+              <form [formGroup]="form" (ngSubmit)="guardar()">
+                <ion-card-content class="body">
+                  <ion-grid>
+                    <ion-row class="login-wrapper">
+
+                      <h1>Fecha de Creacion y Reincorporacion</h1>
+                      <h3>Rellenar todos los campos*</h3>
+
+                      <div class="input-row">
+                        <span class="icon"><fa-icon icon="calendar-plus"></fa-icon></span>
+                        <input type="date" formControlName="fecha_creacion" placeholder="Fecha de solicitud" required/>
+                      </div>
+
+                      <div class="input-row">
+                        <span class="icon"><fa-icon icon="calendar-check"></fa-icon></span>
+                        <input type="date" formControlName="fecha_reincorporacion" placeholder="Fecha Reincorporacion" required/>
+                      </div>
+
+                      <h1>Datos del Paciente</h1>
+
+                      <div class="input-row">
+                        <span class="icon"><ion-icon name="text-outline"></ion-icon></span>
+                        <input type="text" formControlName="nombre_paciente" placeholder="Nombre(s)" required/>
+                      </div>
+
+
+                      <div class="input-row">
+                        <span class="icon"><ion-icon name="text-outline"></ion-icon></span>
+                        <input type="text"  formControlName="apellidos_paciente" placeholder="Apellido(s)" required/>
+                      </div>
+
+                      <div class="input-row">
+                        <span class="icon"><fa-icon icon="graduation-cap"></fa-icon></span>
+                        <input type="text" formControlName="carrera" placeholder="Carrera" required/>
+                      </div>
+
+                      <div class="input-row">
+                        <span class="icon"><fa-icon icon="id-badge"></fa-icon></span>
+                        <input type="text" style="text-transform: uppercase;" maxlength="10" minlength="10" formControlName="matricula" placeholder="Matricula" required/>
+                      </div>
+
+                      <div class="input-row">
+                        <span class="icon"><fa-icon icon="circle-info"></fa-icon></span>
+                        <input type="text"  formControlName="detalles" placeholder="Detalles" required/>
+                      </div>
+
+                      <h1>Datos del Doctor</h1>
+
+                      <div class="input-row">
+                        <span class="icon"><fa-icon icon="user-doctor"></fa-icon></span>
+                        <input type="text"  formControlName="nombre_doctor" placeholder="Nombre del Doctor" required/>
+                      </div>
+
+                      <div class="submit-row">
+                        <input (click)="guardar()" type="submit" value="Guardar" />
+                        <span class="reset">O   <a (click)="cerrar()"> Cancelar</a></span>
+                      </div>
+                    </ion-row>
+                  </ion-grid>
+                </ion-card-content>
+              </form>
+            </ion-card>
+          </div>
+
+</ion-content>

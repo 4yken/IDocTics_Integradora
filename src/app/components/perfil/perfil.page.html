@@ -1,0 +1,94 @@
+<ion-content>
+  <ion-card class="my-card">
+    <ion-card-content>
+      <div class="ion-text-center icon-text-container">
+        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <h1>Perfil</h1>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+    <ion-content class="ion-padding">
+      <ion-card class="ion-text-center my-cardd">
+        <ion-avatar class="avatar-border">
+          <img src="https://akamai.sscdn.co/uploadfile/letras/fotos/5/c/9/8/5c980df21e2774aa0f9055a7eab57e90.jpg" alt="Avatar" class="avatar">
+        </ion-avatar>
+        <ion-card-header>
+          <ion-card-title>{{nombres}} {{apellidos}}</ion-card-title>
+        </ion-card-header>
+      </ion-card>
+
+      <ion-card class="my-cardd">
+        <ion-card-header>
+          <ion-card-title>Datos Personales</ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>
+          <ion-grid>
+            <ion-row>
+              <ion-col size="2">
+                <fa-icon icon="envelope"></fa-icon>
+              </ion-col>
+              <ion-col>
+                <ion-card-subtitle class="large">{{correo}}</ion-card-subtitle>
+                <ion-card-subtitle class="small">Correo Electrónico</ion-card-subtitle>
+              </ion-col>
+            </ion-row>
+
+            <ion-row>
+              <ion-col size="2">
+                <fa-icon icon="square-phone"></fa-icon>
+              </ion-col>
+              <ion-col>
+                <ion-card-subtitle class="large">{{telefono}}</ion-card-subtitle>
+                <ion-card-subtitle class="small">Teléfono</ion-card-subtitle>
+              </ion-col>
+            </ion-row>
+
+            <ion-row *ngIf="rol === 'Paciente'">
+              <ion-col size="2">
+                <fa-icon icon="address-card"></fa-icon>
+              </ion-col>
+              <ion-col>
+                <ion-card-subtitle class="large">{{num_seguro_social}}</ion-card-subtitle>
+                <ion-card-subtitle class="small">NSS</ion-card-subtitle>
+              </ion-col>
+            </ion-row>
+
+            <ion-row *ngIf="rol === 'Paciente'">
+              <ion-col size="2">
+                <fa-icon icon="id-badge"></fa-icon>
+              </ion-col>
+              <ion-col>
+                <ion-card-subtitle class="large">{{matricula}}</ion-card-subtitle>
+                <ion-card-subtitle class="small">Matrícula</ion-card-subtitle>
+              </ion-col>
+            </ion-row>
+
+            <ion-row *ngIf="rol === 'Paciente'">
+              <ion-col size="2">
+                <fa-icon icon="graduation-cap"></fa-icon>
+              </ion-col>
+              <ion-col>
+                <ion-card-subtitle class="large">{{carrera}}</ion-card-subtitle>
+                <ion-card-subtitle class="small">Carrera</ion-card-subtitle>
+              </ion-col>
+            </ion-row>
+
+            <ion-row *ngIf="rol === 'Doctor'">
+              <ion-col size="2">
+                <fa-icon icon="address-card"></fa-icon>
+              </ion-col>
+              <ion-col>
+                <ion-card-subtitle class="large">{{cedula}}</ion-card-subtitle>
+                <ion-card-subtitle class="small">Cédula</ion-card-subtitle>
+              </ion-col>
+            </ion-row>
+
+          </ion-grid>
+        </ion-card-content>
+      </ion-card>
+    </ion-content>
+</ion-content>

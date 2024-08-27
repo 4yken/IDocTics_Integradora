@@ -1,0 +1,70 @@
+<ion-header >
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.2/normalize.css"/>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+</ion-header>
+
+<ion-content>
+  <div class="container">
+    <ion-card  [formGroup]="form" (ngSubmit)="registrarse()">
+      <ion-card-header>
+        <ion-card-title><img src="assets/Logo_IDocTics.png" alt="IDocTics"></ion-card-title>
+      </ion-card-header>
+      <ion-card-content class="body">
+        <ion-grid>
+          <ion-row class="login-wrapper">
+            <h1>Registrase</h1>
+            <hr>
+            <div>
+              <hr>
+              <h3>Rellenar todos los campos*</h3>
+            </div>
+            <div class="input-row">
+              <span class="icon"><ion-icon name="at-outline"></ion-icon></span>
+              <input type="email"  formControlName="correo"  placeholder="Email" required/>
+            </div>
+
+            <div class="input-row">
+              <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+              <input type="password"  formControlName="password" placeholder="Contraseña (Mínimo 6 caracteres)" required/>
+            </div>
+
+            <div class="input-row">
+              <span class="icon"><ion-icon name="text-outline"></ion-icon></span>
+              <input type="text" formControlName="nombres" placeholder="Nombre(s)" required/>
+            </div>
+
+            <div class="input-row">
+              <span class="icon"><ion-icon name="text-outline"></ion-icon></span>
+              <input type="text"  formControlName="apellidos" placeholder="Apellido(s)" required/>
+            </div>
+
+            <div class="input-row">
+              <span class="icon"><ion-icon name="call-outline"></ion-icon></span>
+              <input type="number"  min="0"  maxlength="10" minlength="10" formControlName="telefono" placeholder="Teléfono" required/>
+            </div>
+
+            <div class="input-row">
+              <span class="icon"><fa-icon icon="arrow-down-1-9"></fa-icon></span>
+              <input type="number" min="0" formControlName="num_seguro_social" placeholder="No.Seguro Social" required/>
+            </div>
+
+            <div class="input-row">
+              <span class="icon"><fa-icon icon="id-badge"></fa-icon></span>
+              <input type="text" style="text-transform: uppercase;" maxlength="10" minlength="10" formControlName="matricula" placeholder="Matrícula" required/>
+            </div>
+
+            <div class="input-row">
+              <span class="icon"><fa-icon icon="graduation-cap"></fa-icon></span>
+              <input type="text"   formControlName="carrera" placeholder="Carrera" required/>
+            </div>
+
+            <div class="submit-row">
+              <input (click)="registrarse()" type="submit" value="Registrarse" />
+              <span class="reset">O   <a [routerLink]="['/home']" routerLinkActive="router-link-active"> Cancelar</a></span>
+            </div>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

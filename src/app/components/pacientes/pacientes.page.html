@@ -1,0 +1,69 @@
+<ion-content>
+  <ion-grid *ngIf="rol === 'Doctor'" fixed="">
+
+    <ion-card class="my-card">
+      <ion-card-content>
+        <div class="ion-text-center icon-text-container">
+          <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+          </ion-buttons>
+          <h1>Pacientes</h1>
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+  <div>
+    <ion-grid fixed="">
+      <ion-searchbar style="text-transform: uppercase;" placeholder="Buscar" debounce="500" searchIcon="search-outline" (ionChange)="buscar($event)"></ion-searchbar>
+
+
+  <div class="table-container">
+    <table>
+      <tbody *ngFor="let p of pacientes">
+        <tr *ngIf="p.perfil === 'Paciente' && resp === p.matricula" class="tr-second">
+          <td>{{p.nombres}} {{p.apellidos}}</td>
+          <td>{{p.num_seguro_social}}</td>
+          <td>
+
+            <ion-button fill="clear" color="warning" size="small"  (click)="verDetalles(p)">
+              <fa-icon icon="eye"></fa-icon>
+            </ion-button>
+
+          </td>
+
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+    </ion-grid>
+  </div>
+
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>NSS</th>
+          <th>Detalles</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let p of pacientes">
+        <tr *ngIf="p.perfil === 'Paciente'" class="tr-second">
+          <td>{{p.nombres}} {{p.apellidos}}</td>
+          <td>{{p.num_seguro_social}}</td>
+          <td>
+
+            <ion-button fill="clear" color="warning" size="small"  (click)="verDetalles(p)">
+              <fa-icon icon="eye"></fa-icon>
+            </ion-button>
+
+          </td>
+
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  </ion-grid>
+</ion-content>

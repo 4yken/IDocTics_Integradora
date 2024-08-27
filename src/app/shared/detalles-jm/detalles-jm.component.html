@@ -1,0 +1,45 @@
+<ion-content>
+
+  <ion-card class="my-card">
+    <ion-card-content>
+      <div class="ion-text-center icon-text-container">
+        <h1>Justificante Medico</h1>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="my-cardd">
+
+    <ion-card-header>
+      <ion-card-title>Información</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-grid>
+
+          <ion-label>De la fecha <strong>{{body.fecha_creacion}}</strong> a la fecha <strong>{{body.fecha_reincorporacion}}</strong></ion-label>
+          <hr>
+          <ion-label>El alumno <strong>{{body.nombre_paciente }}</strong><strong>{{ body.apellidos_paciente}}</strong> de la carrera <strong>{{body.carrera}}</strong> con la matricula <strong>{{body.matricula}}</strong>
+             se vera ausente por las siguientes circunstancias
+          </ion-label>
+          <hr>
+          <p>{{body.detalles}}</p>
+          <hr>
+          <h3>Att. Dr./Dra {{body.nombre_doctor}}</h3>
+
+      </ion-grid>
+
+      <ion-grid>
+        <ion-col>
+          <ion-button class="custom-button" (click)="cerrar()">
+            <fa-icon class="icon" icon="circle-xmark" slot="end"></fa-icon>
+            <ion-label>Cerrar</ion-label>
+          </ion-button>
+        </ion-col>
+      </ion-grid>
+
+    </ion-card-content>
+  </ion-card>
+
+
+</ion-content>

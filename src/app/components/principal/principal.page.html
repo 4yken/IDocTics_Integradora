@@ -1,0 +1,129 @@
+<ion-content>
+  <ion-card class="my-card">
+    <ion-card-content>
+      <div class="ion-text-center icon-text-container">
+        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <h1>Citas Pendientes</h1>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-grid fixed="" >
+
+    <ion-col>
+      <ion-button class="custom-button" (click)="crearCita()">
+        <fa-icon icon="square-plus" slot="end"></fa-icon>
+        <ion-label *ngIf="rol === 'Doctor'">Crear cita</ion-label>
+        <ion-label *ngIf="rol === 'Paciente'">Agendar cita</ion-label>
+      </ion-button>
+    </ion-col>
+  </ion-grid>
+
+<!--Lista de Pendientes-->
+  <div *ngIf="rol === 'Doctor'">
+
+    <div>
+      <ion-grid fixed="">
+        <ion-searchbar style="text-transform: uppercase;" searchIcon="search-outline" placeholder="Buscar matricula" debounce="500"  (ionChange)="buscar($event)"></ion-searchbar>
+
+        <div class="table-container">
+          <table *ngFor="let c of citas">
+            <tbody *ngIf="resp === c.matricula">
+              <tr *ngIf="c.estado === false" class="tr-second">
+                <td>{{c.nombre_paciente}}</td>
+                <td>{{c.fecha}}</td>
+                <td>
+
+                  <ion-button fill="clear" color="warning" size="small" (click)="editar(c)">
+                    <fa-icon icon="pen-to-square"></fa-icon>
+                  </ion-button>
+                  <ion-button fill="clear" color="danger" size="small" (click)="eliminar(c.id)">
+                    <fa-icon icon="trash"></fa-icon>
+                  </ion-button>
+
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </ion-grid>
+    </div>
+
+
+    <ion-grid fixed="">
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Paciente</th>
+              <th>Fecha / Hora</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody *ngFor="let c of citas">
+            <tr *ngIf="c.estado === false" class="tr-second">
+              <td>{{c.nombre_paciente}}</td>
+              <td>{{c.fecha}}</td>
+              <td>
+
+                <ion-button fill="clear" color="warning" size="small" (click)="editar(c)">
+                  <fa-icon icon="pen-to-square"></fa-icon>
+                </ion-button>
+                <ion-button fill="clear" color="danger" size="small" (click)="eliminar(c.id)">
+                  <fa-icon icon="trash"></fa-icon>
+                </ion-button>
+
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </ion-grid>
+  </div>
+
+
+  <div *ngIf="rol === 'Paciente'">
+
+    <ion-grid fixed="">
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Paciente</th>
+              <th>Fecha / Hora</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+            <tbody *ngFor="let c of citas">
+              <tr *ngIf="matricula === c.matricula && c.estado === false" class="tr-second">
+                <td>{{c.nombre_paciente}}</td>
+                <td>{{c.fecha}}</td>
+                <td>
+
+                  <ion-button fill="clear" color="warning" size="small" (click)="editar(c)">
+                    <fa-icon icon="pen-to-square"></fa-icon>
+                  </ion-button>
+                  <ion-button fill="clear" color="danger" size="small" (click)="eliminar(c.id)">
+                    <fa-icon icon="trash"></fa-icon>
+                  </ion-button>
+
+                </td>
+              </tr>
+            </tbody>
+        </table>
+      </div>
+
+    </ion-grid>
+
+  </div>
+
+
+
+
+</ion-content>

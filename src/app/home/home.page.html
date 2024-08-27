@@ -1,0 +1,37 @@
+<ion-header >
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.2/normalize.css"/>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+</ion-header>
+
+<ion-content>
+  <div class="container">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title><img src="assets/Logo_IDocTics.png" alt="IDocTics"></ion-card-title>
+      </ion-card-header>
+      <ion-card-content class="body">
+        <ion-grid>
+          <ion-row class="login-wrapper">
+            <h1>Iniciar Sesión</h1>
+
+            <div class="input-row">
+              <span class="icon"><ion-icon name="at-outline"></ion-icon></span>
+              <input type="email" [(ngModel)]="credenciales.correo" placeholder="Email"/>
+            </div>
+
+            <div class="input-row">
+              <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+              <input type="password" [(ngModel)]="credenciales.password" placeholder="Contraseña"/>
+            </div>
+
+
+            <div class="submit-row">
+              <input type="submit" value="Iniciar sesión " (click)="login()" />
+              <span class="reset">O  <a [routerLink]="['/registrarse']" routerLinkActive="router-link-active">Registrarse</a></span>
+            </div>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

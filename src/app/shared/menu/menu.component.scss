@@ -1,0 +1,81 @@
+.menu-transparent {
+  background-color: rgba(0, 0, 0, 0.808); /* fondo blanco transparente */
+  opacity: .97; /* opacidad del 80% */
+}
+
+
+.mt{
+  margin-top: 20px;
+}
+
+ion-header {
+  box-shadow: 0px 2px 5px rgba(255, 255, 255, 0.25);
+}
+
+ion-toolbar{
+  --background: #121112; /* Cambiar el color de fondo a verde */
+  --color: #ffffff; /* Cambiar el color del texto a blanco */
+}
+
+
+ion-item{
+  --background: #121112; /* Cambiar el color de fondo a verde */
+  --border-style: none;
+}
+
+.selected {
+  background-color: #4aea9c; /* color de fondo de la card seleccionada */
+  color: rgba(0, 0, 0, 0.904); /* color del texto de la card seleccionada */
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+ion-card:not(.selected) {
+  background-color: #121112; /* color de fondo de la card seleccionada */
+  color: rgba(255, 255, 255, 0.904); /* color del texto de la card seleccionada */
+  box-shadow: 0px 2px 2px rgba(255, 255, 255, 0.25);
+}
+
+ion-card {
+  width: 250px;
+  height: 70px;
+}
+.center{
+  display: block;
+  margin: 0 auto;
+  margin-bottom:50px;
+  width: 95%;
+}
+
+ion-title {
+  text-align: center;
+}
+
+
+fa-icon {
+  font-size: 30px; /* Tamaño del icono */
+  width: 30px; /* Ancho del icono */
+  height: 30px; /* Altura del icono */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ion-label {
+  font-weight: bold;
+  margin-left: 15px;
+  margin-top: 6px;
+}
+
+.centerCard{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.centercar{
+  display: flex;
+}
+

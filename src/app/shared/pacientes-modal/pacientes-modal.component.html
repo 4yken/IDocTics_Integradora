@@ -1,0 +1,109 @@
+<ion-content>
+
+  <ion-card class="my-card">
+    <ion-card-content>
+      <div class="ion-text-center icon-text-container">
+        <h1>Información</h1>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-content class="ion-padding">
+
+    <ion-card class="my-cardd">
+      <ion-card-header>
+        <ion-card-title>Datos Del Paciente</ion-card-title>
+      </ion-card-header>
+
+
+      <ion-card-content>
+        <ion-grid>
+
+          <ion-row>
+            <ion-col size="2">
+              <fa-icon icon="user"></fa-icon>
+            </ion-col>
+            <ion-col>
+              <ion-card-subtitle class="large">{{paciente.nombres}} {{paciente.apellidos}}</ion-card-subtitle>
+              <ion-card-subtitle class="small">Nombre</ion-card-subtitle>
+            </ion-col>
+          </ion-row>
+
+
+          <ion-row>
+            <ion-col size="2">
+              <fa-icon icon="id-card-clip"></fa-icon>
+            </ion-col>
+            <ion-col>
+              <ion-card-subtitle class="large">{{paciente.perfil}}</ion-card-subtitle>
+              <ion-card-subtitle class="small">Perfil</ion-card-subtitle>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col size="2">
+              <fa-icon icon="address-card"></fa-icon>
+            </ion-col>
+            <ion-col>
+              <ion-card-subtitle class="large">{{paciente.num_seguro_social}}</ion-card-subtitle>
+              <ion-card-subtitle class="small">NSS</ion-card-subtitle>
+            </ion-col>
+          </ion-row>
+
+
+          <ion-row>
+            <ion-col size="2">
+              <fa-icon icon="id-badge"></fa-icon>
+            </ion-col>
+            <ion-col>
+              <ion-card-subtitle class="large">{{paciente.matricula}}</ion-card-subtitle>
+              <ion-card-subtitle class="small">Matricula</ion-card-subtitle>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col size="2">
+              <fa-icon icon="graduation-cap"></fa-icon>
+            </ion-col>
+            <ion-col>
+              <ion-card-subtitle class="large">{{paciente.carrera}}</ion-card-subtitle>
+              <ion-card-subtitle class="small">Carrera</ion-card-subtitle>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col size="2">
+              <fa-icon icon="at"></fa-icon>
+            </ion-col>
+            <ion-col>
+              <ion-card-subtitle class="large">{{paciente.correo}}</ion-card-subtitle>
+              <ion-card-subtitle class="small">Email</ion-card-subtitle>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col size="2">
+              <fa-icon icon="square-phone"></fa-icon>
+            </ion-col>
+            <ion-col>
+              <ion-card-subtitle class="large">{{paciente.telefono}}</ion-card-subtitle>
+              <ion-card-subtitle class="small">Teléfono</ion-card-subtitle>
+            </ion-col>
+          </ion-row>
+
+
+          <ion-grid>
+            <ion-col>
+              <ion-button class="custom-button" (click)="cerrar()">
+                <fa-icon class="icon" icon="circle-xmark" slot="end"></fa-icon>
+                <ion-label>Cerrar</ion-label>
+              </ion-button>
+            </ion-col>
+          </ion-grid>
+
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+  </ion-content>
+
+</ion-content>

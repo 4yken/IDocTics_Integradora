@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "integradora-45bb8"
+  },
+  "targets": {
+    "integradora-45bb8": {
+      "hosting": {
+        "app": [
+          "integradora-45bb8"
+        ]
+      }
+    }
+  }
+}
